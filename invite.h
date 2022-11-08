@@ -20,7 +20,8 @@ public:
     bool supprimer(int);
     bool modifier(int);
 
-//*
+//**
+
 private:
     int id;
     QString nom,prenom;
