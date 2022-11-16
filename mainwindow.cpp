@@ -3,6 +3,7 @@
 #include "invite.h"
 #include<QMessageBox>
 #include<QIntValidator>
+#include "dialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -78,25 +79,40 @@ void MainWindow::on_pushButton_clicked()
                                   QObject::tr("modification non effectué \n""Click Cancel to exit"),QMessageBox::Cancel);
 }
 }
-void   MainWindow::sendMail()
-{
-    Smtp* smtp = new Smtp("adam.chebaane@esprit.tn",ui->mail_pass->text(), "smtp.gmail.com");
-    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
-    if( !files.isEmpty() )
-        smtp->sendMail("adam.chebaane@esprit.tn", ui->rcpt->text() , ui->subject->text(),ui->msg->toPlainText(), files );
+void MainWindow::on_Recherche_clicked()
+{
+    int id=ui->lineEdit_id->text().toInt();
+    if(id==0)
+    {
+        QMessageBox::information(nullptr,QObject::tr("Champ vide"),QObject::tr("Veuiller insérer une CIN!"),QMessageBox::Cancel);
+        ui->table_recherche->setModel(i.afficher());
+    }
     else
-        smtp->sendMail("adam.chebaane@esprit.tn", ui->rcpt->text() , ui->subject->text(),ui->msg->toPlainText());
+    {
+        ui->table_recherche->setModel(i.recherche(id));
+    }
 }
-void   MainWindow::mailSent(QString status)
+
+
+void MainWindow::on_Tri_clicked()
+{
+    ui->table_tri->setModel(i.trier());
+}
+
+
+void MainWindow::on_envoyer_mail_employe_clicked()
 {
 
-    if(status == "Message sent")
-        QMessageBox::warning( nullptr, tr( "Qt Simple SMTP client" ), tr( "Message sent!\n\n" ) );
-    ui->rcpt->clear();
-    ui->subject->clear();
-    ui->file->clear();
-    ui->msg->clear();
-    ui->mail_pass->clear();
+    QItemSelectionModel *select = ui->tableView->selectionModel();
+
+    QString email_recipient = select->selectedRows(5).value(0).data().toString();
+    QString nom_recipient = select->selectedRows(1).value(0).data().toString();
+    QString prenom_recipient = select->selectedRows(2).value(0).data().toString();
+
+    QDialog *d=new Dialog(email_recipient,nom_recipient,prenom_recipient,this);
+    d->show();
+    d->exec();
 }
+
 

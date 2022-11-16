@@ -282,73 +282,82 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="table_recherche">
      <attribute name="title">
-      <string>mail</string>
+      <string>Recherche</string>
      </attribute>
-     <widget class="QLineEdit" name="rcpt">
+     <widget class="QLineEdit" name="lineEdit_id">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>381</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="placeholderText">
-       <string>recipient</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="mail_pass">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>10</y>
-        <width>171</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="placeholderText">
-       <string>your mail password</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="subject">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
+        <x>212</x>
         <y>40</y>
-        <width>501</width>
+        <width>211</width>
         <height>20</height>
        </rect>
       </property>
-      <property name="placeholderText">
-       <string>Subject</string>
-      </property>
      </widget>
-     <widget class="QTextEdit" name="msg">
+     <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>70</y>
-        <width>501</width>
-        <height>131</height>
+        <x>6</x>
+        <y>40</y>
+        <width>181</width>
+        <height>20</height>
        </rect>
       </property>
-      <property name="placeholderText">
-       <string>type your message here ...</string>
+      <property name="text">
+       <string>DONNER LE ID A RECHERCHER :</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="sendBtn">
+     <widget class="QPushButton" name="Recherche">
       <property name="geometry">
        <rect>
-        <x>24</x>
-        <y>210</y>
-        <width>501</width>
+        <x>130</x>
+        <y>150</y>
+        <width>75</width>
         <height>23</height>
        </rect>
       </property>
       <property name="text">
-       <string>Send</string>
+       <string>recherche</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEdit">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>120</y>
+        <width>221</width>
+        <height>111</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="table_tri">
+     <attribute name="title">
+      <string>Tri</string>
+     </attribute>
+     <widget class="QTextEdit" name="textEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>20</y>
+        <width>391</width>
+        <height>151</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Tri">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>200</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>trier</string>
       </property>
      </widget>
     </widget>

@@ -77,3 +77,30 @@ QSqlQueryModel* invite::afficher()
    return model ;
 
 }
+
+QSqlQueryModel *invite::recherche(int id)
+ {
+     QSqlQueryModel * model= new QSqlQueryModel();
+     QString res = QString::number(id);
+
+     model->setQuery("select * from invite where id like '" +res+ "'");
+
+     model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
+     model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
+     model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
+     model->setHeaderData(3,Qt::Horizontal,QObject::tr("adresse"));
+     model->setHeaderData(4,Qt::Horizontal,QObject::tr("email"));
+
+
+ return model;
+ }
+
+QSqlQueryModel *invite::trier() //de A à Z
+ {
+     QSqlQuery * q = new  QSqlQuery ();
+            QSqlQueryModel * model = new  QSqlQueryModel ();
+            q->prepare("SELECT * FROM invite order by nomc ASC");
+            q->exec();
+            model->setQuery(*q);
+            return model;
+ }

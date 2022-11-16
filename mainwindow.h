@@ -23,6 +23,12 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_envoyer_mail_employe_clicked();
+
+    void on_Recherche_clicked();
+
+    void on_Tri_clicked();
+
 private:
     Ui::MainWindow *ui;
     invite i;
