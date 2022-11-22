@@ -23,7 +23,7 @@ private slots:
 
     void on_pushButton_clicked();
 
-    void on_envoyer_mail_employe_clicked();
+    void on_envoyer_mail_invite_clicked();
 
     void on_Recherche_clicked();
 

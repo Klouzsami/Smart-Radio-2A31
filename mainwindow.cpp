@@ -12,6 +12,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->le_id->setValidator( new QIntValidator(100, 99999999, this));
     ui->tab_invite->setModel(i.afficher());
+
+    /*//maps
+    QSettings settings(QSettings::IniFormat, QSettings::UserScope,
+                       QCoreApplication::organizationName(), QCoreApplication::applicationName());
+
+    ui->quickWidget->dynamicCall("Navigate(const QString&)", "https://www.google.com/maps/place/ESPRIT/@36.9016729,10.1713215,15z");
+
+   */
 }
 
 MainWindow::~MainWindow()
@@ -85,7 +93,7 @@ void MainWindow::on_Recherche_clicked()
     int id=ui->lineEdit_id->text().toInt();
     if(id==0)
     {
-        QMessageBox::information(nullptr,QObject::tr("Champ vide"),QObject::tr("Veuiller insérer une CIN!"),QMessageBox::Cancel);
+        QMessageBox::information(nullptr,QObject::tr("Champ vide"),QObject::tr("Veuiller insérer une id!"),QMessageBox::Cancel);
         ui->table_recherche->setModel(i.afficher());
     }
     else
@@ -101,7 +109,7 @@ void MainWindow::on_Tri_clicked()
 }
 
 
-void MainWindow::on_envoyer_mail_employe_clicked()
+void MainWindow::on_envoyer_mail_invite_clicked()
 {
 
     QItemSelectionModel *select = ui->tableView->selectionModel();
