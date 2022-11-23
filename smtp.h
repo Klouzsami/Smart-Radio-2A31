@@ -6,12 +6,12 @@
 #include <QtNetwork/QSslSocket>
 #include <QString>
 #include <QTextStream>
-#include <QTableView>
 #include <QDebug>
 #include <QtWidgets/QMessageBox>
 #include <QByteArray>
 
 
+//class smtpData;
 
 class Smtp : public QObject
 {
@@ -52,4 +52,6 @@ private:
     int state;
 
 };
-#endif
+
+
+#endif // SMTP_H

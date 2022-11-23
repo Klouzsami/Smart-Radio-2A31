@@ -1,38 +1,40 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include"sponsor.h"
 #include <QMainWindow>
-#include"invite.h"
 
-namespace Ui {
-class MainWindow;
-}
+
+
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
 
 private slots:
     void on_pb_ajouter_clicked();
 
+
     void on_pb_supprimer_clicked();
 
-    void on_pushButton_clicked();
+    void on_pb_modifier_clicked();
 
-    void on_envoyer_mail_invite_clicked();
+    void on_pb_chercher_sponsor_clicked();
 
-    void on_Recherche_clicked();
+    void on_pb_trier_sponsor_clicked();
 
-    void on_Tri_clicked();
+    void on_tab_sponsor_currentChanged(int index);
 
 private:
     Ui::MainWindow *ui;
-    invite i;
+    Sponsor S;
 };
-
-
 #endif // MAINWINDOW_H
