@@ -19,8 +19,8 @@ public:
     QSqlQueryModel* afficher();
     bool supprimer(int);
     bool modifier(int);
-    void recherche(int);
-    void trier();
+    QSqlQueryModel* recherche(int);
+    QSqlQueryModel* trier();
 
 //**
 

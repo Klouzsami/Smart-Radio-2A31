@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql network serialport widgets printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,22 +25,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-    dialog.cpp \
+    arduino.cpp \
     invite.cpp \
         main.cpp \
         mainwindow.cpp \
-    connection.cpp \
-    smtp.cpp
+    connection.cpp
 
 HEADERS += \
-    dialog.h \
+    arduino.h \
     invite.h \
         mainwindow.h \
-    connection.h \
-    smtp.h
+    connection.h
 
 FORMS += \
-        dialog.ui \
         mainwindow.ui
 
 # Default rules for deployment.

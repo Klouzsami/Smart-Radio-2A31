@@ -45,13 +45,12 @@ bool invite::supprimer(int id)
 bool invite::modifier(int id)
 {
     QSqlQuery query;
-           QString res=QString::number(id);
 
 
-             query.prepare("UPDATE INVITE "" SET id=:id, nom=:nom, prenom=:prenom where ID= res");
+             query.prepare("UPDATE INVITE SET nom=:nom, prenom=:prenom where ID=:id");
 
 
-                   query.bindValue(":id", res);
+                   query.bindValue(":id", id);
                    query.bindValue(":nom", nom);
                    query.bindValue(":prenom", prenom);
 
@@ -83,7 +82,7 @@ QSqlQueryModel *invite::recherche(int id)
      QSqlQueryModel * model= new QSqlQueryModel();
      QString res = QString::number(id);
 
-     model->setQuery("select * from invite where id like '" +res+ "'");
+     model->setQuery("select * from invite where id like '" +res+ "%'");
 
      model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
      model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
@@ -99,7 +98,7 @@ QSqlQueryModel *invite::trier() //de A à Z
  {
      QSqlQuery * q = new  QSqlQuery ();
             QSqlQueryModel * model = new  QSqlQueryModel ();
-            q->prepare("SELECT * FROM invite order by nomc ASC");
+            q->prepare("SELECT * FROM invite order by nom ASC");
             q->exec();
             model->setQuery(*q);
             return model;

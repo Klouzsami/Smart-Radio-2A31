@@ -3,9 +3,13 @@
 #include <QMessageBox>
 #include<QDebug>
 #include "connection.h"
+#include "smtp.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+
+
     Connection c;
     bool test=c.createconnect();
     MainWindow w;

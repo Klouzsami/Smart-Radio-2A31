@@ -6,12 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>722</width>
-    <height>363</height>
+    <width>685</width>
+    <height>434</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>GESTION DES INVITE</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel{
+color : red;
+
+}</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QTabWidget" name="MAP">
@@ -25,6 +31,9 @@
     </property>
     <property name="currentIndex">
      <number>0</number>
+    </property>
+    <property name="documentMode">
+     <bool>true</bool>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -138,6 +147,55 @@
         <width>601</width>
         <height>192</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_id">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>200</y>
+        <width>211</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Recherche">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>200</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>recherche</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>230</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Trier</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>200</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Exporter PDF</string>
       </property>
      </widget>
     </widget>
@@ -282,111 +340,29 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="table_recherche">
-     <attribute name="title">
-      <string>Recherche</string>
-     </attribute>
-     <widget class="QLineEdit" name="lineEdit_id">
-      <property name="geometry">
-       <rect>
-        <x>212</x>
-        <y>40</y>
-        <width>211</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>6</x>
-        <y>40</y>
-        <width>181</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>DONNER LE ID A RECHERCHER :</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="Recherche">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>150</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>recherche</string>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="textEdit">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>120</y>
-        <width>221</width>
-        <height>111</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="table_tri">
-     <attribute name="title">
-      <string>Tri</string>
-     </attribute>
-     <widget class="QTextEdit" name="textEdit_2">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>20</y>
-        <width>391</width>
-        <height>151</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="Tri">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>200</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>trier</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_4">
-     <attribute name="title">
-      <string>MAP</string>
-     </attribute>
-     <widget class="QQuickWidget" name="quickWidget">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>621</width>
-        <height>241</height>
-       </rect>
-      </property>
-      <property name="resizeMode">
-       <enum>QQuickWidget::SizeRootObjectToView</enum>
-      </property>
-     </widget>
-    </widget>
    </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>685</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label_5</zorder>
+   <zorder>MAP</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>722</width>
+     <width>685</width>
      <height>22</height>
     </rect>
    </property>
@@ -408,13 +384,6 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>QQuickWidget</class>
-   <extends>QWidget</extends>
-   <header location="global">QtQuickWidgets/QQuickWidget</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
